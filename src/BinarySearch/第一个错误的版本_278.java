@@ -1,4 +1,4 @@
-package 二分查找;
+package BinarySearch;
 
 public class 第一个错误的版本_278 {
     public int firstBadVersion(int n) {

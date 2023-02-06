@@ -1,4 +1,4 @@
-package 二分查找;
+package BinarySearch;
 
 public class x的平方根_69 {
     public static void main(String[] args) {

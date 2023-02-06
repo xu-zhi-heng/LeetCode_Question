@@ -1,4 +1,4 @@
-package 二分查找;
+package BinarySearch;
 
 public class 山脉数组的峰顶索引_852 {
     public static void main(String[] args) {
