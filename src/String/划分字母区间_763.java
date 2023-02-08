@@ -12,11 +12,20 @@ public class 划分字母区间_763 {
     public List<Integer> partitionLabels(String s) {
         List<Integer> result = new ArrayList<>();
         if (s.length() == 0) return result;
-        char[] char_counts = new char[26];
-        int left = 0;
-        int right = 0;
+        // 记录每一个字符最后出现的位置
+        int[] last_index = new int[26];
         for (int i = 0; i < s.length(); i++) {
-
+            last_index[s.charAt(i) - 'a'] = i;
+        }
+        int start = 0;
+        int end = 0;
+        for (int i = 0; i < s.length(); i++) {
+            // 因为end是最大值，所有end之前的所有元素最后出现的位置都没有在end后面出现过
+            end = Math.max(end, last_index[s.charAt(i) - 'a']);
+            if (i == end) {
+                result.add(end - start + 1);
+                start = end + 1;
+            }
         }
         return result;
     }
