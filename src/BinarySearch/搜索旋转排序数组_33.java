@@ -29,7 +29,6 @@ public class 搜索旋转排序数组_33 {
         } else {
             right = start;
         }
-
         while (left <= right) {
             int mid = left + (right - left) / 2;
             if (nums[mid] == target) {
