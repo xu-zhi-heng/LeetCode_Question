@@ -10,6 +10,25 @@ public class 多数元素_169 {
         System.out.println(majorityElement_02(arr));
     }
 
+    // 第二种写法: Boyer-Moore 投票算法
+    public static int BoyerMoore(int[] nums) {
+        int count = 0;
+        Integer candiddate = null;
+        for(int i = 0; i < nums.length; i++) {
+            if (count == 0) {
+                candiddate = nums[i];
+                count++;
+                continue;
+            }
+            if(nums[i] == candiddate) {
+                count++;
+            } else {
+                count--;
+            }
+        }
+        return candiddate;
+    }
+
     public static int majorityElement(int[] nums) {
         int temp = 0;
         boolean flag = false;
