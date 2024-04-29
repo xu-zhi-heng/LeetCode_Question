@@ -2,7 +2,15 @@ package Dynamic;
 
 public class 买卖股票的最佳时机_121 {
     public static void main(String[] args) {
-
+        // 一次遍历做法，在最低点卖出
+        int[] prices = new int[]{7,6,4,3,1};
+        int minBuy = Integer.MAX_VALUE;
+        int maxSell = -1;
+        for(int i = 0; i < prices.length; i++) {
+            minBuy = Math.min(prices[i], minBuy);
+            maxSell = Math.max(maxSell, prices[i] - minBuy);
+        }
+        System.out.println(maxSell);
     }
 
     /**
