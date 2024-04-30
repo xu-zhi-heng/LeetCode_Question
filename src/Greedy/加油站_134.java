@@ -5,7 +5,25 @@ import java.util.stream.IntStream;
 
 public class 加油站_134 {
     public static void main(String[] args) {
-
+        int[] gas = new int[]{1,2,3,4,5};
+        int[] cost = new int[]{3,4,5,1,2};
+        int start = 0;
+        int currentGasTotal = 0;
+        int total = 0;
+        for (int i = 0; i < gas.length; i++) {
+            int rest = gas[i] - cost[i];
+            currentGasTotal += rest;
+            total += rest;
+            if (currentGasTotal < 0) {
+                start = i + 1;
+                currentGasTotal = 0;
+            }
+        }
+        if (total < 0) {
+            System.out.println(-1);
+        } else {
+            System.out.println(start);
+        }
     }
 
 
