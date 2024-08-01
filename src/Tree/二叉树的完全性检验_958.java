@@ -14,9 +14,9 @@ public class 二叉树的完全性检验_958 {
         while (!queue.isEmpty()) {
             root = queue.poll();
             if (root == null) {
-                flag = true;
+                flag = true;        // 当设置完为true之后代表后面没有元素了
             } else {
-                if (flag) return false;
+                if (flag) return false;     
                 queue.offer(root.left);
                 queue.offer(root.right);
             }
